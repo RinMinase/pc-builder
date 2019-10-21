@@ -1,0 +1,13 @@
+# Compiled output
+dist/
+
+# Node/NPM/Yarn cache/storage/lock files
+node_modules/
+package-lock.json
+
+# Node/NPM/Yarn Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
