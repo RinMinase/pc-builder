@@ -1,3 +1,6 @@
+# General files
+.env
+
 # Compiled output
 dist/
 
