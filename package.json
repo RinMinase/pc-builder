@@ -31,7 +31,7 @@
     "scss-spinners": "^1.1.10"
   },
   "devDependencies": {
-    "@types/react-dom": "^16.9.2",
+    "@types/react-dom": "^16.9.3",
     "@types/react-redux": "^7.1.5",
     "@types/react-router-dom": "^5.1.0",
     "clean-webpack-plugin": "^3.0.0",
