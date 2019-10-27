@@ -44,7 +44,11 @@ export default function TabLogin() {
 							<Grid item xs={2}></Grid>
 							<Grid item xs={2}></Grid>
 							<Grid item xs={6}>
-								<Button type="submit" variant="contained" color="primary" fullWidth>Login</Button>
+								<Button type="submit"
+									size="large"
+									variant="contained"
+									color="primary"
+									fullWidth>Login</Button>
 							</Grid>
 						</Grid>
 					</Box>
