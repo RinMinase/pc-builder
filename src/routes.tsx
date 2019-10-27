@@ -1,7 +1,8 @@
 import { default as React, Suspense, lazy } from "react";
 import { Router, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import { Grid } from "@material-ui/core";
+import { Grid, createMuiTheme, MuiThemeProvider } from "@material-ui/core";
+import { green, indigo } from "@material-ui/core/colors";
 
 import App from "./";
 import Navbar from "./core/navbar";
@@ -13,6 +14,15 @@ const routes = [{
 	path: "/",
 	component: "./login",
 }];
+
+const theme = createMuiTheme({
+	palette: {
+		primary: indigo,
+		secondary: {
+			main: green[400],
+		}
+	}
+});
 
 function renderLoader() {
 	return(
@@ -35,7 +45,9 @@ export function Routes() {
 	return(
 		<Router history={createBrowserHistory()}>
 			<Suspense fallback={renderLoader()}>
-				<App routes={routes} />
+				<MuiThemeProvider theme={theme}>
+					<App routes={routes} />
+				</MuiThemeProvider>
 			</Suspense>
 		</Router>
 	);
