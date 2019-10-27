@@ -14,7 +14,7 @@ export default function Navbar() {
 					<IconButton edge="start" color="inherit" className={style.menuButton}>
 						<MenuIcon />
 					</IconButton>
-					<Typography variant="h6" className={style.title}>React Test App</Typography>
+					<Typography variant="h6" className={style.title}>PC Builder</Typography>
 
 					<Link to="/home"><Button>Home</Button></Link>
 					<Link to="/login"><Button>Login</Button></Link>
