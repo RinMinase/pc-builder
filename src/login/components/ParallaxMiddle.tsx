@@ -10,9 +10,18 @@ export default function ParallaxMiddle() {
 					<Typography align="center" variant="h4">Estimate your budgets</Typography>
 				</Box>
 				<Box mt={4} mb={24}>
-					<Typography align="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod feugiat malesuada.</Typography>
-					<Typography align="center">Morbi blandit nisl eu faucibus eleifend. Fusce dapibus facilisis nisl vitae scelerisque.</Typography>
-					<Typography align="center"> Suspendisse vitae diam interdum, vehicula tellus eu, posuere massa.</Typography>
+					<Typography align="center">
+						<span>Lorem ipsum dolor sit amet, </span>
+						<span>consectetur adipiscing elit.</span>
+					</Typography>
+					<Typography align="center">
+						<span>Morbi blandit nisl eu faucibus eleifend. </span>
+						<span>Fusce dapibus facilisis.</span>
+					</Typography>
+					<Typography align="center">
+						<span>Suspendisse vitae diam interdum, </span>
+						<span>vehicula tellus eu, posuere massa.</span>
+					</Typography>
 				</Box>
 			</Grid>
 		</Grid>

@@ -20,9 +20,18 @@ export default function ParallaxTop() {
 					<Typography align="center" variant="h4">Build your ideal setup now!</Typography>
 				</Box>
 				<Box mt={6} mb={24}>
-					<Typography align="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Typography>
-					<Typography align="center">Morbi blandit nisl eu faucibus eleifend. Fusce dapibus facilisis.</Typography>
-					<Typography align="center"> Suspendisse vitae diam interdum, vehicula tellus eu, posuere massa.</Typography>
+					<Typography align="center">
+						<span>Lorem ipsum dolor sit amet, </span>
+						<span>consectetur adipiscing elit.</span>
+					</Typography>
+					<Typography align="center">
+						<span>Morbi blandit nisl eu faucibus eleifend. </span>
+						<span>Fusce dapibus facilisis.</span>
+					</Typography>
+					<Typography align="center">
+						<span>Suspendisse vitae diam interdum, </span>
+						<span>vehicula tellus eu, posuere massa.</span>
+					</Typography>
 				</Box>
 			</Grid>
 
