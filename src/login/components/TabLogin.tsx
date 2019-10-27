@@ -12,7 +12,7 @@ export default function TabLogin() {
 		setValues({ ...values, [field]: event.target.value });
 	};
 
-	const handleSubmit = (event: any) => {
+	const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
 		event.preventDefault();
 	};
 
