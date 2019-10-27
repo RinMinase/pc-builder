@@ -9,7 +9,7 @@
     </a>
 </p>
 <p align="center">
-    <a href="https://app.netlify.com/sites/pc-builder/deploys">
+    <a href="https://app.netlify.com/sites/pcbuilder/deploys">
         <img alt="Netlify-Status" src="https://img.shields.io/netlify/9313f52f-a422-497d-bd95-252a0101b3ba?logo=netlify&style=for-the-badge">
     </a>
 </p>
