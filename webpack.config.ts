@@ -86,7 +86,8 @@ function configureTypescript() {
 		rules: {
 			indent: [ true, "tabs", 2 ],
 			quotemark: [ true, "double", "jsx-double" ],
-			semicolon: [ true, "always" ]
+			semicolon: [ true, "always" ],
+			"max-line-length": [ true, 100 ]
 		}
 	}
 
