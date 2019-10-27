@@ -24,7 +24,7 @@ function renderLoader() {
 				direction="column"
 				justify="center"
 				alignItems="center"
-				style={{ minHeight: '100vh' }}>
+				style={{ minHeight: "100vh" }}>
 				<div className="spinner round"></div>
 			</Grid>
 		</>
