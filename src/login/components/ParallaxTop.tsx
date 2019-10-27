@@ -2,15 +2,8 @@ import { default as React, useState } from "react";
 
 import { AppBar, Box, Grid, Tab, Tabs, Typography } from "@material-ui/core";
 
-function TabPanel(props: any) {
-	const { children, value, index } = props;
-
-	return (
-		<Typography component="div" hidden={value !== index}>
-			<Box p={3}>{children}</Box>
-		</Typography>
-	);
-}
+import TabLogin from "./TabLogin";
+import TabRegister from "./TabRegister";
 
 export default function ParallaxTop() {
 	const [value, setValue] = useState(0);
@@ -42,12 +35,14 @@ export default function ParallaxTop() {
 								<Tab label="Register" />
 							</Tabs>
 						</AppBar>
-						<TabPanel value={value} index={0}>
-							Login
-						</TabPanel>
-						<TabPanel value={value} index={1}>
-							Register
-						</TabPanel>
+
+						<div hidden={value !== 0}>
+							<TabLogin />
+						</div>
+
+						<div hidden={value !== 1}>
+							<TabRegister />
+						</div>
 					</div>
 				</Grid>
 
