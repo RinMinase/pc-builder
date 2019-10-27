@@ -36,7 +36,7 @@ export default function ParallaxTop() {
 			</Grid>
 
 			<Grid item xs={12} sm={5}>
-				<div>
+				<Box mt={4}>
 					<AppBar position="static">
 						<Tabs onChange={handleTabChange} value={value} centered>
 							<Tab label="Login" />
@@ -51,7 +51,7 @@ export default function ParallaxTop() {
 					<div hidden={value !== 1}>
 						<TabRegister />
 					</div>
-				</div>
+				</Box>
 			</Grid>
 
 		</Grid>
