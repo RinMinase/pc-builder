@@ -7,12 +7,12 @@ export default function ParallaxTop() {
 		<>
 			<Grid container spacing={3}>
 				<Grid item xs={12} sm={6}>
-					<Box mt={4} mb={2}>
+					<Box mt={24} mb={2}>
 						<Typography align="center" variant="h4">Build your ideal setup now!</Typography>
 					</Box>
-					<Box mt={4}>
-						<Typography align="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod feugiat malesuada.</Typography>
-						<Typography align="center">Morbi blandit nisl eu faucibus eleifend. Fusce dapibus facilisis nisl vitae scelerisque.</Typography>
+					<Box mt={6} mb={24}>
+						<Typography align="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Typography>
+						<Typography align="center">Morbi blandit nisl eu faucibus eleifend. Fusce dapibus facilisis.</Typography>
 						<Typography align="center"> Suspendisse vitae diam interdum, vehicula tellus eu, posuere massa.</Typography>
 					</Box>
 				</Grid>
