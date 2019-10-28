@@ -20,8 +20,8 @@ const theme = createMuiTheme({
 		primary: indigo,
 		secondary: {
 			main: green[400],
-		}
-	}
+		},
+	},
 });
 
 function renderLoader() {
