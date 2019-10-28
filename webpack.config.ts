@@ -159,7 +159,8 @@ function configureProduction(webpackConfig) {
 	}));
 	webpackConfig.plugins.push(new CleanWebpackPlugin());
 	webpackConfig.plugins.push(new CopyPlugin([
-		{ from: "assets", to: "assets", ignore: ["_redirects"], },
-		{ from: "assets/_redirects", to: "_redirects", toType: "file" }
+		{ from: "assets", to: "assets", ignore: ["_redirects", "robots.txt"], },
+		{ from: "assets/_redirects", to: "_redirects", toType: "file" },
+		{ from: "assets/robots.txt", to: "robots.txt", toType: "file" }
 	]));
 }
