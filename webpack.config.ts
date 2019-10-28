@@ -19,9 +19,9 @@ module.exports = (_env, arg) => {
 		},
 		module: {
 			rules: [
+				...configureTypescript(),
 				configureMainStyles(!isProduction),
 				configureChildStyles(!isProduction),
-				...configureTypescript(),
 			]
 		},
 		devServer: {
