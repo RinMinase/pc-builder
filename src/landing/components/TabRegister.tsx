@@ -24,34 +24,35 @@ export default function TabRegister() {
 
 	const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		let hasNoErrors: boolean = true;
+
+		const invalidFields = {
+			email: false,
+			user: false,
+			password: false,
+			confirmPassword: false,
+		};
 
 		if (!validator.equals(form.password, form.confirmPassword)) {
-			console.log("invalid confirm");
-			setFormErrors({ ...formErrors, confirmPassword: true });
-			hasNoErrors = false;
+			invalidFields.confirmPassword = true;
 		}
 
 		if (!validator.isEmail(form.email)) {
-			console.log("invalid email");
-			setFormErrors({ ...formErrors, email: true });
-			hasNoErrors = false;
+			invalidFields.email = true;
 		}
 
 		if (!validator.isLength(form.user, { min: 6, max: 12 })) {
-			console.log("invalid user");
-			setFormErrors({ ...formErrors, user: true });
-			hasNoErrors = false;
+			invalidFields.user = true;
 		}
 
 		if (!validator.isLength(form.password, { min: 6, max: 12 })) {
-			console.log("invalid pw");
-			setFormErrors({ ...formErrors, password: true });
-			hasNoErrors = false;
+			invalidFields.password = true;
 		}
 
+		setFormErrors({ ...formErrors, ...invalidFields });
+		const hasNoErrors: boolean = !Object.values(invalidFields).includes(true);
+
 		if (hasNoErrors) {
-			console.log("form success");
+			// Form Success
 		}
 	};
 
@@ -66,8 +67,10 @@ export default function TabRegister() {
 						onChange={handleChange("email")}
 						margin="normal"
 						variant="outlined"
+						helperText={ formErrors.email ? "Email is invalid" : "" }
 						error={ formErrors.email }
 						fullWidth
+						required
 					/>
 					<TextField
 						label="Username"
@@ -78,6 +81,7 @@ export default function TabRegister() {
 						helperText={ formErrors.user ? "Should be 6-12 characters long" : "" }
 						error={ formErrors.user }
 						fullWidth
+						required
 					/>
 					<TextField
 						label="Password"
@@ -89,6 +93,7 @@ export default function TabRegister() {
 						helperText={ formErrors.password ? "Should be 6-12 characters long" : "" }
 						error={ formErrors.password }
 						fullWidth
+						required
 					/>
 					<TextField
 						label="Confirm Password"
@@ -97,8 +102,10 @@ export default function TabRegister() {
 						onChange={handleChange("confirmPassword")}
 						margin="normal"
 						variant="outlined"
+						helperText={ formErrors.confirmPassword ? "Please make sure your passwords match" : "" }
 						error={ formErrors.confirmPassword }
 						fullWidth
+						required
 					/>
 
 					<Box mt={3} mb={1}>
