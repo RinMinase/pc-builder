@@ -58,5 +58,5 @@ export function DynamicRoute(route: any) {
 
 	const Component = lazy(() => import(`${route.component}/`));
 
-	return(<Route path={route.path} component={Component} />);
+	return(<Route path={route.path} component={Component} exact />);
 }
