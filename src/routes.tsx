@@ -26,7 +26,7 @@ const theme = createMuiTheme({
 
 function renderLoader() {
 	return(
-		<>
+		<MuiThemeProvider theme={theme}>
 			<Navbar />
 			<Grid
 				container
@@ -37,7 +37,7 @@ function renderLoader() {
 				style={{ minHeight: "100vh" }}>
 				<div className="spinner round"></div>
 			</Grid>
-		</>
+		</MuiThemeProvider>
 	);
 }
 
