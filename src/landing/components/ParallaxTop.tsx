@@ -44,13 +44,8 @@ export default function ParallaxTop() {
 						</Tabs>
 					</AppBar>
 
-					<div hidden={value !== 0}>
-						<TabLogin />
-					</div>
-
-					<div hidden={value !== 1}>
-						<TabRegister />
-					</div>
+					{ value === 0 ? <TabLogin /> : null }
+					{ value === 1 ? <TabRegister /> : null }
 				</Box>
 			</Grid>
 
