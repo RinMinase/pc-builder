@@ -1,6 +1,7 @@
 import { default as React, useState, ChangeEvent } from "react";
 
 import { Box, Button, Grid, Paper, TextField } from "@material-ui/core";
+import validator from "validator";
 
 export default function TabRegister() {
 	const [form, setForm] = useState({
@@ -10,12 +11,48 @@ export default function TabRegister() {
 		confirmPassword: "",
 	});
 
+	const [formErrors, setFormErrors] = useState({
+		email: false,
+		user: false,
+		password: false,
+		confirmPassword: false,
+	});
+
 	const handleChange = (field: string) => (event: ChangeEvent<HTMLInputElement>) => {
 		setForm({ ...form, [field]: event.target.value });
 	};
 
 	const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
 		event.preventDefault();
+		let hasNoErrors: boolean = true;
+
+		if (!validator.equals(form.password, form.confirmPassword)) {
+			console.log("invalid confirm");
+			setFormErrors({ ...formErrors, confirmPassword: true });
+			hasNoErrors = false;
+		}
+
+		if (!validator.isEmail(form.email)) {
+			console.log("invalid email");
+			setFormErrors({ ...formErrors, email: true });
+			hasNoErrors = false;
+		}
+
+		if (!validator.isLength(form.user, { min: 6, max: 12 })) {
+			console.log("invalid user");
+			setFormErrors({ ...formErrors, user: true });
+			hasNoErrors = false;
+		}
+
+		if (!validator.isLength(form.password, { min: 6, max: 12 })) {
+			console.log("invalid pw");
+			setFormErrors({ ...formErrors, password: true });
+			hasNoErrors = false;
+		}
+
+		if (hasNoErrors) {
+			console.log("form success");
+		}
 	};
 
 	return(
@@ -29,6 +66,7 @@ export default function TabRegister() {
 						onChange={handleChange("email")}
 						margin="normal"
 						variant="outlined"
+						error={ formErrors.email }
 						fullWidth
 					/>
 					<TextField
@@ -37,6 +75,8 @@ export default function TabRegister() {
 						onChange={handleChange("user")}
 						margin="normal"
 						variant="outlined"
+						helperText={ formErrors.user ? "Should be 6-12 characters long" : "" }
+						error={ formErrors.user }
 						fullWidth
 					/>
 					<TextField
@@ -46,6 +86,8 @@ export default function TabRegister() {
 						onChange={handleChange("password")}
 						margin="normal"
 						variant="outlined"
+						helperText={ formErrors.password ? "Should be 6-12 characters long" : "" }
+						error={ formErrors.password }
 						fullWidth
 					/>
 					<TextField
@@ -55,6 +97,7 @@ export default function TabRegister() {
 						onChange={handleChange("confirmPassword")}
 						margin="normal"
 						variant="outlined"
+						error={ formErrors.confirmPassword }
 						fullWidth
 					/>
 
