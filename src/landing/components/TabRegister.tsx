@@ -67,7 +67,7 @@ export default function TabRegister() {
 								<Button type="submit"
 									size="large"
 									variant="contained"
-									color="primary"
+									color="secondary"
 									fullWidth>Register</Button>
 							</Grid>
 						</Grid>
