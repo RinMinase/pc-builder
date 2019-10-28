@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 
-import { AppBar, Toolbar, IconButton, Typography, Button } from "@material-ui/core";
+import { AppBar, IconButton, MenuItem, Toolbar, Typography } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 
 import style from "./index.scss";
@@ -16,8 +16,8 @@ export default function Navbar() {
 					</IconButton>
 					<Typography variant="h6" className={style.title}>PC Builder</Typography>
 
-					<Link to="/home"><Button>Home</Button></Link>
-					<Link to="/login"><Button>Login</Button></Link>
+					<MenuItem component={Link} to={"/home"}>Home</MenuItem>
+					<MenuItem component={Link} to={"/about"}>About</MenuItem>
 				</Toolbar>
 			</AppBar>
 		</div>
