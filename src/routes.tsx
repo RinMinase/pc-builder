@@ -12,7 +12,7 @@ const routes = [{
 	component: "./home",
 }, {
 	path: "/",
-	component: "./login",
+	component: "./landing",
 }];
 
 const theme = createMuiTheme({
