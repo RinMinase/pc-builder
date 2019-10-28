@@ -14,7 +14,9 @@ export default function Navbar() {
 					<IconButton edge="start" color="inherit" className={style.menuButton}>
 						<MenuIcon />
 					</IconButton>
-					<Typography variant="h6" className={style.title}>PC Builder</Typography>
+					<Typography variant="h6" className={style.title}>
+						<MenuItem component={Link} to={"/"}>PC Builder</MenuItem>
+					</Typography>
 
 					<MenuItem component={Link} to={"/home"}>Home</MenuItem>
 					<MenuItem component={Link} to={"/about"}>About</MenuItem>
