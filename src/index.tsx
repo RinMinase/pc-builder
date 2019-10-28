@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 
 import store from "./reducers";
 import { Routes, DynamicRoute } from "./routes";
-import Navbar from "./core/navbar";
+import Navbar from "./core/Navbar";
 
 import "./global.scss";
 

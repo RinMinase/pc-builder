@@ -5,7 +5,7 @@ import { Grid, createMuiTheme, MuiThemeProvider } from "@material-ui/core";
 import { green, indigo } from "@material-ui/core/colors";
 
 import App from "./";
-import Navbar from "./core/navbar";
+import Navbar from "./core/Navbar";
 
 const routes = [{
 	path: "/home",
