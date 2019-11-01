@@ -1,30 +1,23 @@
-import { default as React, useState, ChangeEvent } from "react";
+import { default as React } from "react";
+import useForm from "react-hook-form";
 
 import { Box, Button, Grid, Paper, TextField } from "@material-ui/core";
 
 export default function TabLogin() {
-	const [form, setForm] = useState({
-		user: "",
-		password: "",
-	});
-
-	const handleChange = (field: string) => (event: ChangeEvent<HTMLInputElement>) => {
-		setForm({ ...form, [field]: event.target.value });
-	};
-
-	const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
-		event.preventDefault();
+	const { register, handleSubmit } = useForm();
+	const onSubmit = (_values: object) => {
+		// submit
 	};
 
 	return(
 		<Paper>
 			<Box p={3}>
-				<form onSubmit={handleSubmit} autoComplete="off" noValidate>
+				<form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
 					<Box mt={1}>
 						<TextField
 							label="Username or Email"
-							value={form.user}
-							onChange={handleChange("user")}
+							name={"user"}
+							inputRef={register}
 							margin="normal"
 							variant="outlined"
 							fullWidth
@@ -34,8 +27,8 @@ export default function TabLogin() {
 						<TextField
 							label="Password"
 							type="password"
-							value={form.password}
-							onChange={handleChange("password")}
+							name="password"
+							inputRef={register}
 							margin="normal"
 							variant="outlined"
 							fullWidth
