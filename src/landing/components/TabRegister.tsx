@@ -1,109 +1,84 @@
-import { default as React, useState, ChangeEvent } from "react";
+import { default as React } from "react";
+import useForm from "react-hook-form";
 
 import { Box, Button, Grid, Paper, TextField } from "@material-ui/core";
 import validator from "validator";
 
 export default function TabRegister() {
-	const [form, setForm] = useState({
-		email: "",
-		user: "",
-		password: "",
-		confirmPassword: "",
-	});
-
-	const [formErrors, setFormErrors] = useState({
-		email: false,
-		user: false,
-		password: false,
-		confirmPassword: false,
-	});
-
-	const handleChange = (field: string) => (event: ChangeEvent<HTMLInputElement>) => {
-		setForm({ ...form, [field]: event.target.value });
-	};
-
-	const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
-		event.preventDefault();
-
-		const invalidFields = {
-			email: false,
-			user: false,
-			password: false,
-			confirmPassword: false,
-		};
-
-		if (!validator.equals(form.password, form.confirmPassword)) {
-			invalidFields.confirmPassword = true;
-		}
-
-		if (!validator.isEmail(form.email)) {
-			invalidFields.email = true;
-		}
-
-		if (!validator.isLength(form.user, { min: 6, max: 12 })) {
-			invalidFields.user = true;
-		}
-
-		if (!validator.isLength(form.password, { min: 6, max: 12 })) {
-			invalidFields.password = true;
-		}
-
-		setFormErrors({ ...formErrors, ...invalidFields });
-		const hasNoErrors: boolean = !Object.values(invalidFields).includes(true);
-
-		if (hasNoErrors) {
-			// Form Success
-		}
+	const { register, handleSubmit, errors, watch } = useForm();
+	const onSubmit = (_values: object) => {
+		// submit
 	};
 
 	return(
 		<Paper>
 			<Box p={3}>
-				<form onSubmit={handleSubmit} autoComplete="off" noValidate>
+				<form onSubmit={handleSubmit(onSubmit)} autoComplete="off" noValidate>
 					<Box mt={1}></Box>
 					<TextField
 						label="Email"
-						value={form.email}
-						onChange={handleChange("email")}
+						name={"email"}
+						inputRef={ register({ required: true, validate: (value) => validator.isEmail(value) })}
 						margin="normal"
 						variant="outlined"
-						helperText={ formErrors.email ? "Email is invalid" : "" }
-						error={ formErrors.email }
+						helperText={
+							errors.email ?
+							errors.email.type === "required" ? "Email is required" :
+							errors.email.type === "validate" ? "Email is invalid" : "" : ""
+						}
+						error={ !!errors.email }
 						fullWidth
 						required
 					/>
 					<TextField
 						label="Username"
-						value={form.user}
-						onChange={handleChange("user")}
+						name={"user"}
+						inputRef={register({ required: true, minLength: 6, maxLength: 12 })}
 						margin="normal"
 						variant="outlined"
-						helperText={ formErrors.user ? "Should be 6-12 characters long" : "" }
-						error={ formErrors.user }
+						helperText={
+							errors.user ?
+							errors.user.type === "required" ? "Username is required" :
+							errors.user.type === "minLength" ? "Username should be 6 to 12 characters" :
+							errors.user.type === "maxLength" ? "Username should be 6 to 12 characters" : "" : ""
+						}
+						error={ !!errors.user }
 						fullWidth
 						required
 					/>
 					<TextField
 						label="Password"
 						type="password"
-						value={form.password}
-						onChange={handleChange("password")}
+						name={"password"}
+						inputRef={register({ required: true, minLength: 6, maxLength: 12 })}
 						margin="normal"
 						variant="outlined"
-						helperText={ formErrors.password ? "Should be 6-12 characters long" : "" }
-						error={ formErrors.password }
+						helperText={
+							errors.password ?
+							errors.password.type === "required" ? "Password is required" :
+							errors.password.type === "minLength" ? "Password should be 6 to 12 characters" :
+							errors.password.type === "maxLength" ? "Password should be 6 to 12 characters" : "" : ""
+						}
+						error={ !!errors.password }
 						fullWidth
 						required
 					/>
 					<TextField
 						label="Confirm Password"
 						type="password"
-						value={form.confirmPassword}
-						onChange={handleChange("confirmPassword")}
+						name={"confirmPassword"}
+						inputRef={register({
+							required: true,
+							validate: (value) => value === watch("password"),
+						})}
 						margin="normal"
 						variant="outlined"
-						helperText={ formErrors.confirmPassword ? "Please make sure your passwords match" : "" }
-						error={ formErrors.confirmPassword }
+						helperText={
+							errors.confirmPassword ?
+							errors.confirmPassword.type === "required" ? "Please re-type your password" :
+							errors.confirmPassword.type === "validate" ? "Your passwords does not match" : "" : ""
+						}
+						error={ !!errors.confirmPassword }
 						fullWidth
 						required
 					/>
