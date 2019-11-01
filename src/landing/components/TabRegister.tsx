@@ -2,7 +2,7 @@ import { default as React } from "react";
 import useForm from "react-hook-form";
 
 import { Box, Button, Grid, Paper, TextField } from "@material-ui/core";
-import validator from "validator";
+import { isEmail } from "validator";
 
 export default function TabRegister() {
 	const { register, handleSubmit, errors, watch } = useForm();
@@ -18,7 +18,7 @@ export default function TabRegister() {
 					<TextField
 						label="Email"
 						name={"email"}
-						inputRef={ register({ required: true, validate: (value) => validator.isEmail(value) })}
+						inputRef={ register({ required: true, validate: (value) => isEmail(value) })}
 						margin="normal"
 						variant="outlined"
 						helperText={
