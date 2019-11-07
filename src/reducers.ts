@@ -3,6 +3,11 @@ import { composeWithDevTools as devTools } from "redux-devtools-extension";
 
 import home from "./home/reducers";
 
+export interface ReducerAction {
+	type: string,
+	payload: any,
+}
+
 const reducers = combineReducers({
 	home,
 });
