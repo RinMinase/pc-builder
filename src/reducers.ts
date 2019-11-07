@@ -8,7 +8,7 @@ const reducers = combineReducers({
 });
 
 function thunk() {
-	return ({ dispatch, getState }) => (next) => (action) =>
+	return ({ dispatch, getState }) => (next: any) => (action: any) =>
 		(typeof action === "function") ? action(dispatch, getState) : next(action);
 }
 
