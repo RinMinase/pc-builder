@@ -1,11 +1,12 @@
 import { types } from "./actions";
+import { ReducerAction } from "../reducers";
 
-const initialState = {
+const initState = {
 	commits: [],
 	user: {},
 };
 
-export default function reducer(state = initialState, action) {
+export default function reducer(state = initState, action: ReducerAction) {
 	switch (action.type) {
 		case types.COMMITS_INFO:
 			return { ...state, commits: action.payload };
