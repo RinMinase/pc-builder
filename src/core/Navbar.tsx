@@ -11,11 +11,6 @@ export default function Navbar(props: any) {
 		<div>
 			<AppBar position="fixed">
 				<Toolbar>
-					<Hidden lgUp>
-						<IconButton edge="start" color="inherit" onClick={onSidebarOpen}>
-							<MenuIcon />
-						</IconButton>
-					</Hidden>
 					<Typography variant="h6" style={{ flexGrow: 1 }}>
 						<MenuItem component={Link}
 							to={"/"}
@@ -24,6 +19,11 @@ export default function Navbar(props: any) {
 
 					<MenuItem component={Link} to={"/home"}>Home</MenuItem>
 					<MenuItem component={Link} to={"/about"}>About</MenuItem>
+					<Hidden lgUp>
+						<IconButton edge="start" color="inherit" onClick={onSidebarOpen}>
+							<MenuIcon />
+						</IconButton>
+					</Hidden>
 				</Toolbar>
 			</AppBar>
 		</div>
