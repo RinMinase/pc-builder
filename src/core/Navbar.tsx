@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import { AppBar, IconButton, MenuItem, Toolbar, Typography } from "@material-ui/core";
@@ -7,7 +7,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 export default function Navbar() {
 	return(
 		<div>
-			<AppBar position="static">
+			<AppBar position="fixed">
 				<Toolbar>
 					<IconButton edge="start" color="inherit">
 						<MenuIcon />
