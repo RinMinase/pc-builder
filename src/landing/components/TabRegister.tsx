@@ -1,7 +1,8 @@
 import { default as React } from "react";
 import useForm from "react-hook-form";
 
-import { Box, Button, Grid, Paper, TextField } from "@material-ui/core";
+import { Box, Button, Grid, IconButton, Paper, TextField, Fab } from "@material-ui/core";
+import { GitHub, Facebook, Email } from "@material-ui/icons";
 import { isEmail } from "validator";
 
 export default function TabRegister() {
@@ -85,9 +86,21 @@ export default function TabRegister() {
 
 					<Box mt={3} mb={1}>
 						<Grid container spacing={3}>
-							<Grid item xs={2}></Grid>
-							<Grid item xs={2}></Grid>
-							<Grid item xs={2}></Grid>
+							<Grid item xs={2}>
+								<Fab color="primary" size="medium">
+									<Email />
+								</Fab>
+							</Grid>
+							<Grid item xs={2}>
+								<Fab color="primary" size="medium">
+									<Facebook />
+								</Fab>
+							</Grid>
+							<Grid item xs={2}>
+								<Fab color="primary" size="medium">
+									<GitHub />
+								</Fab>
+							</Grid>
 							<Grid item xs={6}>
 								<Button type="submit"
 									size="large"

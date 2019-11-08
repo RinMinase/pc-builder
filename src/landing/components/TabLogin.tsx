@@ -46,26 +46,25 @@ export default function TabLogin() {
 					<Box mt={3} mb={1}>
 						<Grid container spacing={3}>
 							<Grid item xs={4}>
-								<Button type="submit"
+								<Button type="button"
 									size="large"
 									variant="contained"
 									color="secondary"
 									fullWidth>Google</Button>
-								</Grid>
+							</Grid>
 							<Grid item xs={4}>
-								<Button type="submit"
+								<Button type="button"
 									size="large"
 									variant="contained"
 									color="secondary"
 									fullWidth>Facebook</Button>
-								</Grid>
+							</Grid>
 							<Grid item xs={4}>
-								<Button type="submit"
+								<Button type="button"
 									size="large"
 									variant="contained"
 									color="secondary"
-									fullWidth>Github
-								</Button>
+									fullWidth>Github</Button>
 							</Grid>
 						</Grid>
 					</Box>
@@ -73,17 +72,9 @@ export default function TabLogin() {
 					<Box mt={3} mb={1}>
 						<Grid container spacing={3}>
 							<Grid container item xs={6}>
-							<FormControlLabel
-									className="ml-1"
-									control={
-										<Checkbox
-											name="remember"
-											inputRef={register}
-											color="primary"
-										/>
-									}
-									label="Remember me"
-								/>
+							<FormControlLabel className="ml-1"
+								control={<Checkbox name="remember" inputRef={register} color="primary" />}
+								label="Remember me" />
 							</Grid>
 							<Grid item xs={6}>
 								<Button type="submit"
