@@ -45,6 +45,33 @@ export default function TabLogin() {
 
 					<Box mt={3} mb={1}>
 						<Grid container spacing={3}>
+							<Grid item xs={4}>
+								<Button type="submit"
+									size="large"
+									variant="contained"
+									color="secondary"
+									fullWidth>Google</Button>
+								</Grid>
+							<Grid item xs={4}>
+								<Button type="submit"
+									size="large"
+									variant="contained"
+									color="secondary"
+									fullWidth>Facebook</Button>
+								</Grid>
+							<Grid item xs={4}>
+								<Button type="submit"
+									size="large"
+									variant="contained"
+									color="secondary"
+									fullWidth>Github
+								</Button>
+							</Grid>
+						</Grid>
+					</Box>
+
+					<Box mt={3} mb={1}>
+						<Grid container spacing={3}>
 							<Grid container item xs={6}>
 							<FormControlLabel
 									className="ml-1"
@@ -65,9 +92,6 @@ export default function TabLogin() {
 									color="primary"
 									fullWidth>Login</Button>
 							</Grid>
-							<Grid item xs={4}></Grid>
-							<Grid item xs={4}></Grid>
-							<Grid item xs={4}></Grid>
 						</Grid>
 					</Box>
 
