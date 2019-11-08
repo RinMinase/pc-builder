@@ -22,18 +22,18 @@ export default function Sidebar(props: any) {
 			open={open}
 			classes={{ paper: "sidebar" }}>
 			<Grid container direction="column" alignItems="center">
-				<Avatar style={{ width: 60, height: 60 }} >
-					<AccountCircle style={{ width: 60, height: 60 }} />
+				<Avatar className="avatar">
+					<AccountCircle className="avatar" />
 				</Avatar>
-				<Typography variant="h5" style={{ marginTop: 8 }}>User</Typography>
-				<Divider />
-				<List>
-					<ListItem disableGutters>
-						<ListItemIcon><Dashboard /></ListItemIcon>
-						<ListItemText primary="Home" />
-					</ListItem>
-				</List>
+				<Typography variant="h5" className="mt-1">User</Typography>
 			</Grid>
+			<Divider className="mt-2" />
+			<List>
+				<ListItem disableGutters>
+					<ListItemIcon><Dashboard /></ListItemIcon>
+					<ListItemText primary="Home" />
+				</ListItem>
+			</List>
 		</Drawer>
 	);
 }
