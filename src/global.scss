@@ -16,6 +16,10 @@ body {
 .sidebar {
 	padding: 16px;
 	width: 240px;
-	margin-top: 64px;
+	margin-top: 56px;
 	height: calc(100% - 64px);
+
+	@media screen and (min-width: 600px) {
+		margin-top: 64px;
+	}
 }
