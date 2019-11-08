@@ -1,10 +1,11 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
 import store from "./reducers";
 import { Routes, DynamicRoute } from "./routes";
 import Navbar from "./core/Navbar";
+import Sidebar from "./core/Sidebar";
 
 import "./global.scss";
 
@@ -12,6 +13,7 @@ export default function App(props: any) {
 	return(
 		<div>
 			<Navbar />
+			<Sidebar />
 			<div className="container">
 				<Container routes={props.routes} />
 			</div>
