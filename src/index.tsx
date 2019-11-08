@@ -13,21 +13,15 @@ import "./global.scss";
 export default function App(props: any) {
 	const [openSidebar, setOpenSidebar] = useState(false);
 
-	const handleSidebarOpen = () => {
-		setOpenSidebar(true);
-	};
-
-	const handleSidebarClose = () => {
-		setOpenSidebar(false);
-	};
-
 	const isDesktop = useMediaQuery(useTheme().breakpoints.up("lg"));
-	const shouldOpenSidebar = !isDesktop && openSidebar;
+	const isOpenSidebar = !isDesktop && openSidebar;
 
 	return(
 		<div>
-			<Navbar onSidebarOpen={handleSidebarOpen} />
-			<Sidebar onClose={handleSidebarClose} open={shouldOpenSidebar} variant="temporary" />
+			<Navbar onSidebarOpen={() => setOpenSidebar(true)} />
+			<Sidebar onClose={() => setOpenSidebar(false)}
+				open={isOpenSidebar}
+				variant="temporary" />
 			<div className="container">
 				<Container routes={props.routes} />
 			</div>
