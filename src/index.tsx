@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import { useTheme, useMediaQuery } from "@material-ui/core";
 
 import store from "./reducers";
 import { Routes, DynamicRoute } from "./routes";
@@ -10,10 +11,23 @@ import Sidebar from "./core/Sidebar";
 import "./global.scss";
 
 export default function App(props: any) {
+	const [openSidebar, setOpenSidebar] = useState(false);
+
+	const handleSidebarOpen = () => {
+		setOpenSidebar(true);
+	};
+
+	const handleSidebarClose = () => {
+		setOpenSidebar(false);
+	};
+
+	const isDesktop = useMediaQuery(useTheme().breakpoints.up("lg"));
+	const shouldOpenSidebar = !isDesktop && openSidebar;
+
 	return(
 		<div>
-			<Navbar />
-			<Sidebar />
+			<Navbar onSidebarOpen={handleSidebarOpen} />
+			<Sidebar onClose={handleSidebarClose} open={shouldOpenSidebar} variant="temporary" />
 			<div className="container">
 				<Container routes={props.routes} />
 			</div>

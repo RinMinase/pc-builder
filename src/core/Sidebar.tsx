@@ -13,11 +13,13 @@ import {
 } from "@material-ui/core";
 import { AccountCircle, Dashboard } from "@material-ui/icons";
 
-export default function Sidebar() {
+export default function Sidebar(props: any) {
+	const { onClose, open } = props;
+
 	return(
 		<Drawer anchor="left"
-			open={true}
-			variant="persistent"
+			onClose={onClose}
+			open={open}
 			classes={{ paper: "sidebar" }}>
 			<Grid container direction="column" alignItems="center">
 				<Avatar style={{ width: 60, height: 60 }} >
