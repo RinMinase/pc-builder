@@ -17,8 +17,10 @@ export default function Navbar(props: any) {
 							style={{ paddingLeft: "8px" }}>PC Builder</MenuItem>
 					</Typography>
 
-					<MenuItem component={Link} to={"/home"}>Home</MenuItem>
-					<MenuItem component={Link} to={"/about"}>About</MenuItem>
+					<Hidden mdDown>
+						<MenuItem component={Link} to={"/home"}>Home</MenuItem>
+						<MenuItem component={Link} to={"/about"}>About</MenuItem>
+					</Hidden>
 					<Hidden lgUp>
 						<IconButton edge="start" color="inherit" onClick={onSidebarOpen}>
 							<MenuIcon />
