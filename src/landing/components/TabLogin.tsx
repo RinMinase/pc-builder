@@ -1,7 +1,15 @@
 import { default as React } from "react";
 import useForm from "react-hook-form";
 
-import { Box, Button, Grid, Paper, TextField } from "@material-ui/core";
+import {
+	Box,
+	Button,
+	Checkbox,
+	FormControlLabel,
+	Grid,
+	Paper,
+	TextField,
+} from "@material-ui/core";
 
 export default function TabLogin() {
 	const { register, handleSubmit } = useForm();
@@ -37,9 +45,19 @@ export default function TabLogin() {
 
 					<Box mt={3} mb={1}>
 						<Grid container spacing={3}>
-							<Grid item xs={2}></Grid>
-							<Grid item xs={2}></Grid>
-							<Grid item xs={2}></Grid>
+							<Grid container item xs={6}>
+							<FormControlLabel
+									className="ml-1"
+									control={
+										<Checkbox
+											name="remember"
+											inputRef={register}
+											color="primary"
+										/>
+									}
+									label="Remember me"
+								/>
+							</Grid>
 							<Grid item xs={6}>
 								<Button type="submit"
 									size="large"
@@ -47,6 +65,9 @@ export default function TabLogin() {
 									color="primary"
 									fullWidth>Login</Button>
 							</Grid>
+							<Grid item xs={4}></Grid>
+							<Grid item xs={4}></Grid>
+							<Grid item xs={4}></Grid>
 						</Grid>
 					</Box>
 
