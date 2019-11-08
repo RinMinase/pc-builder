@@ -12,9 +12,20 @@ import {
 	Typography,
 } from "@material-ui/core";
 import { AccountCircle, Dashboard } from "@material-ui/icons";
+// import { makeStyles } from "@material-ui/styles";
+
+// const useStyles = makeStyles((theme: any) => ({
+// 	divider: {
+// 		marginTop: theme.spacing(2),
+// 	},
+// 	username: {
+// 		marginTop: theme.spacing(1),
+// 	},
+// }));
 
 export default function Sidebar(props: any) {
 	const { onClose, open } = props;
+	// const styles = useStyles(props);
 
 	return(
 		<Drawer anchor="left"
@@ -25,9 +36,9 @@ export default function Sidebar(props: any) {
 				<Avatar className="avatar">
 					<AccountCircle className="avatar" />
 				</Avatar>
-				<Typography variant="h5" className="mt-1">User</Typography>
+				<Typography variant="h5" className="mt-2">User</Typography>
 			</Grid>
-			<Divider className="mt-2" />
+			<Divider className="mt-3" />
 			<List>
 				<ListItem disableGutters>
 					<ListItemIcon><Dashboard /></ListItemIcon>
