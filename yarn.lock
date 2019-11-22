@@ -5408,10 +5408,10 @@ schema-utils@^2.0.0, schema-utils@^2.1.0, schema-utils@^2.5.0:
     ajv "^6.10.2"
     ajv-keywords "^3.4.1"
 
-scss-spinners@^1.1.13:
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/scss-spinners/-/scss-spinners-1.1.13.tgz#8c8f6b0dd488d00055839368d1f6dc0b79ce76c4"
-  integrity sha512-1IuFDcHBNoAdYBSJ6JZHli0ROuOt2q6dreiG+W/bF3fY/pR3s1gMdXiqq8p0GG/VnaGDq+4eDO9eFuxBbtyPfQ==
+scss-spinners@^1.1.14:
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/scss-spinners/-/scss-spinners-1.1.14.tgz#bd06e357625ccf82f3d9c132435bf6b7cfecbd07"
+  integrity sha512-KRlwXSDplUR+mc6UXJ35uwWuqlij8XyL1JiIYivht6m+P0jbgcPoaiaUDEvjb8UV1wkEUkJDnlMaMnr+Mz/1hQ==
 
 scss-tokenizer@^0.2.3:
   version "0.2.3"
