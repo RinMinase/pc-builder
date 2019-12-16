@@ -29,7 +29,7 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
-    "scss-spinners": "^1.1.15",
+    "scss-spinners": "^1.1.16",
     "validator": "^12.1.0"
   },
   "devDependencies": {
