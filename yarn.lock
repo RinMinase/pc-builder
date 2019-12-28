@@ -4213,7 +4213,7 @@ node-libs-browser@^2.2.1:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-pre-gyp@*, node-pre-gyp@^0.14.0:
+node-pre-gyp@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.14.0.tgz#9a0596533b877289bcad4e143982ca3d904ddc83"
   integrity sha512-+CvDC7ZttU/sSt9rFjix/P05iS43qHCOOGzcr3Ry99bXG7VX953+vFyEuph/tfqoYu8dttBkE86JSKBO2OzcxA==
@@ -5057,10 +5057,10 @@ react-dom@^16.12.0:
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
-react-hook-form@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-4.2.0.tgz#d6b087ff3212467f4e5acf99cc8393fffdf3e9f6"
-  integrity sha512-6qlBtnfmmXEidUc4BpZArHH5ss30Umj2UGQw2zyA/HLHjNncQ6+FOg29BFTUKYXrPakS5GCnAfXOEwc/YES2aQ==
+react-hook-form@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-4.2.2.tgz#c1bec6a0aaf5f361d41e3614334067192a621673"
+  integrity sha512-RchFFXI0gv1DTnwuNFu6kTGkY1g/G+Hgefgqx9viK1eAAXWzmeUBWp6IA4hPhccIPRofftSQwRVlNpjQEu4DZA==
 
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1, react-is@^16.9.0:
   version "16.12.0"
