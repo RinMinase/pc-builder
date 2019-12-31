@@ -16,7 +16,7 @@ export default function ParallaxFooter() {
 					<span>&nbsp;&nbsp;</span>
 					<Link href="https://github.com/RinMinase/pc-builder"
 						target="_blank"
-						rel="noreferrer">View on GitHub</Link>
+						rel="noopener">View on GitHub</Link>
 				</Typography>
 			</Grid>
 		</Grid>
