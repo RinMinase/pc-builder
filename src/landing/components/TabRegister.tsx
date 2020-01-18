@@ -1,5 +1,5 @@
 import { default as React } from "react";
-import useForm from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 import { Box, Button, Grid, IconButton, Paper, TextField, Fab } from "@material-ui/core";
 import { GitHub, Facebook, Email } from "@material-ui/icons";
@@ -24,8 +24,8 @@ export default function TabRegister() {
 						variant="outlined"
 						helperText={
 							errors.email ?
-							errors.email.type === "required" ? "Email is required" :
-							errors.email.type === "validate" ? "Email is invalid" : "" : ""
+							(errors.email as any).type === "required" ? "Email is required" :
+							(errors.email as any).type === "validate" ? "Email is invalid" : "" : ""
 						}
 						error={ !!errors.email }
 						fullWidth
@@ -39,9 +39,11 @@ export default function TabRegister() {
 						variant="outlined"
 						helperText={
 							errors.user ?
-							errors.user.type === "required" ? "Username is required" :
-							errors.user.type === "minLength" ? "Username should be 6 to 12 characters" :
-							errors.user.type === "maxLength" ? "Username should be 6 to 12 characters" : "" : ""
+							(errors.user as any).type === "required" ? "Username is required" :
+							(errors.user as any).type === "minLength" ?
+								"Username should be 6 to 12 characters" :
+							(errors.user as any).type === "maxLength" ?
+								"Username should be 6 to 12 characters" : "" : ""
 						}
 						error={ !!errors.user }
 						fullWidth
@@ -56,9 +58,11 @@ export default function TabRegister() {
 						variant="outlined"
 						helperText={
 							errors.password ?
-							errors.password.type === "required" ? "Password is required" :
-							errors.password.type === "minLength" ? "Password should be 6 to 12 characters" :
-							errors.password.type === "maxLength" ? "Password should be 6 to 12 characters" : "" : ""
+							(errors.password as any).type === "required" ? "Password is required" :
+							(errors.password as any).type === "minLength" ?
+								"Password should be 6 to 12 characters" :
+							(errors.password as any).type === "maxLength" ?
+								"Password should be 6 to 12 characters" : "" : ""
 						}
 						error={ !!errors.password }
 						fullWidth
@@ -76,8 +80,10 @@ export default function TabRegister() {
 						variant="outlined"
 						helperText={
 							errors.confirmPassword ?
-							errors.confirmPassword.type === "required" ? "Please re-type your password" :
-							errors.confirmPassword.type === "validate" ? "Your passwords does not match" : "" : ""
+							(errors.confirmPassword as any).type === "required" ?
+								"Please re-type your password" :
+							(errors.confirmPassword as any).type === "validate" ?
+								"Your passwords does not match" : "" : ""
 						}
 						error={ !!errors.confirmPassword }
 						fullWidth
