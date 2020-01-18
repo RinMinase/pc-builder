@@ -1,8 +1,8 @@
 import { default as React } from "react";
 import { useForm } from "react-hook-form";
 
-import { Box, Button, Grid, IconButton, Paper, TextField, Fab } from "@material-ui/core";
-import { GitHub, Facebook, Email } from "@material-ui/icons";
+import { Box, Button, Fab, Grid, Paper, TextField } from "@material-ui/core";
+import { Email, Facebook, GitHub } from "@material-ui/icons";
 import { isEmail } from "validator";
 
 export default function TabRegister() {
