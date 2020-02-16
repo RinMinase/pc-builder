@@ -5050,10 +5050,10 @@ react-dom@^16.12.0:
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
-react-hook-form@^4.8.2:
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-4.8.2.tgz#c92aa4f0585296e285188d7415b677ed5256fdaf"
-  integrity sha512-8f0nblsiIiVyYmnVUHumLy12hipzyfz+cyJo30mzPFS8S1cBm1jzOe5d7qt7kXbjaiAOQg6lZ760E9XUAp4pEA==
+react-hook-form@^4.9.4:
+  version "4.9.4"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-4.9.4.tgz#98ed4d9de9751243055e1486257baf2be4a3bdd1"
+  integrity sha512-n91LJ42h/IgDMZqbMwJvLUOd1GjjK66f+IHs9FuRreMhk91Kqss+JCCe8QfFPxGSmRAlAskyX1Spa6/tkQ/UgA==
 
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1, react-is@^16.9.0:
   version "16.12.0"
