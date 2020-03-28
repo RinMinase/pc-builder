@@ -22,7 +22,7 @@
     "dotenv": "^8.2.0",
     "firebase": "^7.10.0",
     "node-sass": "^4.13.1",
-    "react": "^16.13.0",
+    "react": "^16.13.1",
     "react-dom": "^16.13.0",
     "react-hook-form": "^4.10.1",
     "react-redux": "^7.2.0",
