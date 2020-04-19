@@ -45,7 +45,7 @@
     "sass-loader": "^8.0.2",
     "source-map-loader": "^0.2.4",
     "terser-webpack-plugin": "^2.3.5",
-    "ts-loader": "^6.2.2",
+    "ts-loader": "^7.0.0",
     "tslint": "^6.1.1",
     "tslint-loader": "^3.5.4",
     "typescript": "^3.8.3",
